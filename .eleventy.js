@@ -12,8 +12,11 @@ module.exports = function (config) {
   // Set pathPrefix for site
   let pathPrefix = '/';
 
-  // Copy the `admin` folders to the output
+  // Copy the `admin` folder to the output
   config.addPassthroughCopy('admin');
+
+  // Copy the extra `assets` folder to the output
+  config.addPassthroughCopy('assets')
 
   // Copy USWDS init JS so we can load it in HEAD to prevent banner flashing
   config.addPassthroughCopy({'./node_modules/@uswds/uswds/dist/js/uswds-init.js': 'assets/js/uswds-init.js'});
